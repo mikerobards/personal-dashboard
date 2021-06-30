@@ -6,8 +6,12 @@ async function getBackgroundImg() {
     const data = await res.json()
     console.log(data)
     document.body.style.backgroundImage = `url("${data.urls.full}")`
-    author.innerText = `Photo By ${data.user.name}`
+    author.innerHTML = `<p>Photo By <a href="${data.user.links.html}" target="_blank">${data.user.name}</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>`
 }
 
 getBackgroundImg()
+
+
+
+
 
