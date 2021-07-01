@@ -5,7 +5,7 @@ function getBackgroundImg() {
     fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=naasdfasdfasdfasdafsdfture")
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             document.body.style.backgroundImage = `url("${data.urls.full}")`
             author.innerHTML = `<p>Photo By <a href="${data.user.links.html}" target="_blank">${data.user.name}</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>`
         })
@@ -15,6 +15,15 @@ function getBackgroundImg() {
         })
 }
 
+function getCryptoPrice() {
+    fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
+}
+
 getBackgroundImg()
+getCryptoPrice()
 
 
