@@ -29,3 +29,21 @@ div.top {
 h1.time {
   text-align: center;
 }
+
+.crypto-top {
+  display: flex;
+}
+
+.crypto-top img {
+  height: 100%;
+  width: 100%;
+}
+
+.crypto-top h2 {
+  margin-left: 0.5em;
+  margin-top: 11px;
+}
+
+.crypto-prices {
+  font-size: 1.5em;
+}

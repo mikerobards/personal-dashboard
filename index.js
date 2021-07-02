@@ -1,4 +1,6 @@
 const author = document.querySelector('.img-author')
+const cryptoTop = document.querySelector('.crypto-top')
+const cryptoPrices = document.querySelector('.crypto-prices')
 const url1 = "https://api.coingecko.com/api/v3/simple/price?ids=dogecoin&vs_currencies=usd"
 const url2 = "https://api.coingecko.com/api/v3/coins/dogecoin"
 
@@ -23,6 +25,16 @@ function getCryptoPrice() {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            console.log(data.name, data.image.small)
+            cryptoTop.innerHTML = `
+            <img src=${data.image.small}/><h2>${data.name}</h2>
+            `
+            cryptoPrices.innerText = `
+            🎯 : $${data.market_data.current_price.usd}
+            🔺 : $${data.market_data.high_24h.usd}
+            🔻 : $${data.market_data.low_24h.usd}
+            `
+
         })
         .catch(err => {
             console.error(err)
