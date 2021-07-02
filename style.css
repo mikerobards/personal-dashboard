@@ -48,3 +48,8 @@ h1.time {
   font-size: 1.5em;
   margin-top: -1.2em;
 }
+
+.time {
+  font-size: 5em;
+  margin-bottom: 2em;
+}
