@@ -2,7 +2,7 @@ const author = document.querySelector('.img-author')
 const cryptoTop = document.querySelector('.crypto-top')
 const cryptoPrices = document.querySelector('.crypto-prices')
 const url1 = "https://api.coingecko.com/api/v3/simple/price?ids=dogecoin&vs_currencies=usd"
-const url2 = "https://api.coingecko.com/api/v3/coins/dogecoin"
+const url2 = "https://api.coingecko.com/api/v3/coins/bitcoin"
 
 
 function getBackgroundImg() {
