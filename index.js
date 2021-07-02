@@ -42,9 +42,6 @@ function getCryptoPrice() {
         })
 }
 
-getBackgroundImg()
-getCryptoPrice()
-
 function getTime() {
     const date = new Date()
     const options = {
@@ -54,4 +51,35 @@ function getTime() {
     timeEl.innerText = time
 }
 
+
+
+function getWeather(crd) {
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&units=imperial`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
+}
+
+function success(pos) {
+    let crd = pos.coords;
+    console.log('Your current position is:');
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
+    getWeather(crd)
+}
+
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(success);
+}
+
+
+getBackgroundImg()
+getCryptoPrice()
+getLocation()
 setInterval(getTime, 1000)
+
+
+
+
+
