@@ -45,16 +45,13 @@ function getCryptoPrice() {
 getBackgroundImg()
 getCryptoPrice()
 
-const date = new Date()
-// let hours = today.getHours()
-// let time = `${today.getHours()}:${today.getMinutes()} AM`
-// if (hours > 12) {
-//     time = `${today.getHours() - 12}:${today.getMinutes()} PM`
-// }
-let options = {
-    timeStyle: "short"
+function getTime() {
+    const date = new Date()
+    const options = {
+        timeStyle: "short"
+    }
+    let time = date.toLocaleTimeString("en-us", options)
+    timeEl.innerText = time
 }
 
-let time = date.toLocaleTimeString("en-us", options)
-console.log(date.toLocaleTimeString("en-us", options))
-timeEl.innerText = time
+setInterval(getTime, 1000)
