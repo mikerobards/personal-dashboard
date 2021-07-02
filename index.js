@@ -3,6 +3,8 @@ const cryptoTop = document.querySelector('.crypto-top')
 const cryptoPrices = document.querySelector('.crypto-prices')
 const timeEl = document.querySelector('.time')
 const weatherIcon = document.querySelector('.weather-icon')
+const weatherTemp = document.querySelector('.weather-temp')
+const weatherCity = document.querySelector('.weather-city')
 const url1 = "https://api.coingecko.com/api/v3/simple/price?ids=dogecoin&vs_currencies=usd"
 const url2 = "https://api.coingecko.com/api/v3/coins/bitcoin"
 
@@ -66,9 +68,11 @@ function getWeather() {
             .then(data => {
                 console.log(data)
                 console.log(data.weather[0].icon)
+                console.log(data.name)
+                console.log(Math.round(data.main.temp))
                 weatherIcon.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">`
-
-
+                weatherTemp.innerHTML = `${Math.round(data.main.temp)}°F`
+                weatherCity.innerHTML = `${data.name}`
             })
             .catch(err => console.error(err))
     })

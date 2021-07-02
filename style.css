@@ -53,3 +53,28 @@ h1.time {
   font-size: 5em;
   margin-bottom: 2em;
 }
+
+.weather {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.weather-icon {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.weather-temp {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 2em;
+  align-self: center;
+}
+
+.weather-city {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  font-size: 1.75em;
+  justify-self: center;
+}
