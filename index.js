@@ -19,7 +19,7 @@ function getBackgroundImg() {
         })
         .catch(err => {
             document.body.style.backgroundImage = `url("https://images.unsplash.com/photo-1571944400884-bc70b2e2ed87?crop=entropy&cs=srgb&fm=jpg&ixid=MnwyMTEwMjl8MHwxfHJhbmRvbXx8fHx8fHx8fDE2MjUxNzE2NTk&ixlib=rb-1.2.1&q=85")`
-            author.innerHTML = `<p>Photo By <a href="https://unsplash.com/@benkelsey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Ben Kelsey</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>`
+            author.innerHTML = `<p class="author">Photo By <a href="https://unsplash.com/@benkelsey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Ben Kelsey</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></p>`
             console.log(err)
         })
 }
